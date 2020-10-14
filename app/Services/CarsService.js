@@ -21,17 +21,19 @@ class CarsService {
     }
 
     createCar(rawCar) {
-        // let newCar = new Car(rawCar) 
-        // console.log(newCar)  
-        // let cars = [...ProxyState.cars, newCar ]
-        // ProxyState.cars = cars
+        let newCar = new Car(rawCar)
+        console.log(newCar)
+        let cars = [...ProxyState.cars, newCar]
+        ProxyState.cars = cars
 
         // ProxyState.cars = ProxyState.cars.concat(new Car(rawCar))
 
-        let temp = ProxyState.cars
-        temp.push(new Car(rawCar))
-        ProxyState.cars = temp
-    }
+        //     let temp = ProxyState.cars
+        //     temp.push(new Car(rawCar))
+        //     ProxyState.cars = temp
+        // }
 
+    }
 }
+
 export const carsService = new CarsService()

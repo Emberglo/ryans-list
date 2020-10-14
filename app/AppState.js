@@ -9,10 +9,10 @@ class AppState extends EventEmitter {
   cars = [new Car({ make: "Honda", model: "Accord", year: 2002, price: 5000, img: "//placehold.it/200x200", description: "This is a red honda." })]
 
   /** @type {House[]}*/
-  houses = [new House({ address: "123 Main St", size: "1200sqft", houseImgUrl: "https://placehold.it/200x200", houseDescription: "Beautiful house in center of town"})]
+  houses = [new House({ address: "123 Main St", cost: 100000, size: "1200sqft", houseImgUrl: "https://placehold.it/200x200", houseDescription: "Beautiful house in center of town"})]
 
   /** @type {Job[]}*/
-  jobs = [new Job({ name: 'Micron', title: 'Engineer', salary: '100000', jobDescription: "Build innovative products" })]
+  jobs = [new Job({ name: 'Micron', title: 'Engineer', salary: 100000, jobDescription: "Build innovative products" })]
 }
 // new Car("Jeep", "Rango",1990, 10000, "//placehold.it/200x200", "A nice jeep")
 
