@@ -1,6 +1,5 @@
-/**
- * @returns {string} A random string of characters
- */
+// @returns {string} A random string of characters
+ 
 export const generateId = function () {
     var result = "";
     var characters =

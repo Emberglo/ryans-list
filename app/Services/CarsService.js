@@ -1,11 +1,10 @@
-import { ProxyState } from "../AppState.js"
-import { Car } from '../Models/Car.js'
+import { ProxyState } from "../AppState.js";
+import Car from "../Models/Car.js";
 
-class CarsService{
+class CarsService {
     constructor() {
-        console.log('carsService')
+        // console.log("carsService");
     }
-
     bid(id, bidAmount) {
         let temp = ProxyState.cars
         if (bidAmount > 0) {
@@ -14,7 +13,6 @@ class CarsService{
             ProxyState.cars = temp
         }
     }
-
     removeCar(id) {
         let temp = ProxyState.cars
         let carIndex = temp.findIndex(c => c.id == id)
@@ -23,10 +21,17 @@ class CarsService{
     }
 
     createCar(rawCar) {
-        let newCar = new Car(rawCar)
-        let cars = [...ProxyState.cars, newCar]
+        // let newCar = new Car(rawCar) 
+        // console.log(newCar)  
+        // let cars = [...ProxyState.cars, newCar ]
+        // ProxyState.cars = cars
+
+        // ProxyState.cars = ProxyState.cars.concat(new Car(rawCar))
+
+        let temp = ProxyState.cars
+        temp.push(new Car(rawCar))
+        ProxyState.cars = temp
     }
 
 }
-
 export const carsService = new CarsService()

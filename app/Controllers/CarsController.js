@@ -5,32 +5,37 @@ function _draw() {
     let cars = ProxyState.cars
     let template = ""
     cars.forEach(c => template += c.Template)
-    document.getElementById('cars').innerHTML = template
+    document.getElementById("cars").innerHTML = template
 }
 
 export default class CarsController {
     constructor() {
-        console.log('cars controller')
-        console.log(ProxyState.cars)
+        // console.log("cars controller")
+        // console.log(ProxyState.cars)
         _draw()
-        //listens for changes to cars array
-        ProxyState.on('cars', _draw)
+        ProxyState.on("cars", _draw)
     }
 
-    createCar(){
-        event.preventDefault()
-        console.log('car creating')
+    createCar() {
+        event.preventDefault();
+        // console.log("car creating")
         let form = event.target
-        console.log(form)
+        // console.log(form)
         let rawCar = {
-            make: form.make.value
-            model: form.model.value
-            year: form.year.value
-            price: form.price.value
-            description: form.description.value
+            // @ts-ignore
+            make: form.make.value,
+            // @ts-ignore
+            model: form.model.value,
+            // @ts-ignore
+            year: form.year.value,
+            // @ts-ignore
+            price: parseInt(form.price.value),
+            // @ts-ignore
+            description: form.description.value,
+            // @ts-ignore
             img: form.imgUrl.value
-    }
-    console.log(rawCar)
+        }
+        // console.log(rawCar)
         carsService.createCar(rawCar)
     }
 
@@ -39,10 +44,12 @@ export default class CarsController {
     }
 
     bid(id) {
-        event.preventDefault()
+        event.preventDefault();
         let form = event.target
-        console.log(form.bid.value)
+        // @ts-ignore
+        // console.log(form.bid.value)
+        // @ts-ignore
         let bid = form.bid.value
         carsService.bid(id, bid)
     }
-}
+} 
