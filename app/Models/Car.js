@@ -5,17 +5,16 @@ export default class Car {
         this.year = data.year
         this.price = data.price
         this.imgUrl = data.imgUrl
-        this.description = data.description || "Uknown"
+        this.description = data.description || "Unknown"
         this._id = data._id
     }
 
     get Template() {
-        return /*html*/`
-        <div class="col-3 border border-info shadow-lg rounded">
+        return /*html*/`<div class="col-12 col-md-2 border border-gray shadow-lg rounded p-3 m-3">
             <img class="img-fluid" src="${this.imgUrl}" alt=""/>
-            <h1>${this.make}</h1>
+            <h3>${this.make}</h3>
             <h3>${this.model}</h3>
-            <h3>$${this.price}</h3>
+            <h5>$${this.price}</h5>
             <p>${this.year}</p>
             <p>${this.description}</p>
             <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')">Delort</button>
