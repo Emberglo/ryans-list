@@ -27,7 +27,8 @@ export default class JobsController {
             hours : form.hours.value,
             description : form.description.value || "Unknown",
         }
-        // console.log(rawCar)
+        // @ts-ignore
+        $('#jobModal').modal('toggle')
         jobService.postJob(newJob)
     }
 

@@ -34,7 +34,8 @@ export default class HouseController {
             // @ts-ignore
             description: form.description.value || "Unknown"
         }
-        // console.log(rawCar)
+        // @ts-ignore
+        $('#houseModal').modal('toggle')
         houseService.postHouse(newHouse)
     }
 

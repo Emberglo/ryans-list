@@ -27,6 +27,8 @@ export default class CarController {
             price: formData.price.value,
             description: formData.description.value
         }
+        // @ts-ignore
+        $('#carModal').modal('toggle')
         carService.postCar(newCar)
     }
 
