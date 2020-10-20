@@ -11,18 +11,23 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <div class="header d-flex">
+    <header class="container-fluid">
+        <nav class="row navbar navbar-dark navbar-expand bg-dark text-light header justify-content-between mt-0">
+            <div class="col-3 d-flex">
                 <i class="fas fa-hand-holding-usd mt-2"></i>
                 <p class="ml-3 title">Ryan's List</p>
+            </div>
+            <div class="col-3 d-flex justify-content-around mt-2">
+                <p id="carButton">Cars</p>
+                <p id="houseButton">Houses</p>
+                <p id="jobButton">Jobs</p>
             </div>
         </nav>
     </header>
     <main>
         
         
-        <div class="container-fluid">
+        <div id= "carContainer" class="container-fluid">
             <div class="row my-3">
                 <div class="col">
                     <h1><i class="fas fa-car-side"></i> | Cars For Sale</h1>
@@ -80,7 +85,7 @@
             </div>
         </div>
         
-        <div class="container-fluid">
+        <div id="houseContainer" class="container-fluid hidden">
             <div class="row my-3">
                 <div class="col">
                     <h1><i class="fas fa-home"></i> | Homes For Sale</h1>
@@ -142,7 +147,7 @@
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div id="jobContainer" class="container-fluid hidden">
             <div class="row my-3">
                 <div class="col">
                     <h1><i class="fas fa-briefcase"></i> | Jobs</h1>

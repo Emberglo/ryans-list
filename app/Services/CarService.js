@@ -29,6 +29,7 @@ class CarService {
             this.getCars()
         }).catch(err => console.error(err))
     }
+
 }
 
 export const carService = new CarService();

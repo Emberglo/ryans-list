@@ -461,10 +461,14 @@ mark,
 	background-color: #fcf8e3;
 }
 
+.hidden {
+	display: none;
+}
+
 .header {
 	font-size: 2rem;
 	padding: 5px;
-	margin-top: 5px;
+	margin-top: 0;
 }
 
 .title {
