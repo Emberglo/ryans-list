@@ -17,7 +17,7 @@ export default class Car {
             <h5>$${this.price}</h5>
             <p>${this.year}</p>
             <p>${this.description}</p>
-            <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')">Delort</button>
+            <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')">Delete</button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editCarModal-${this._id}">
             Edit
         </button>
@@ -44,23 +44,23 @@ export default class Car {
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.make}" name="make" id="make">
+                                        <input type="text" class="form-control m-2" value="${this.make}" name="make" id="make">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.model}" name="model" id="model">
+                                        <input type="text" class="form-control m-2" value="${this.model}" name="model" id="model">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" value="${this.year}" class="form-control" name="year"
+                                        <input type="text" value="${this.year}" class="form-control m-2" name="year"
                                             id="year">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.imgUrl}" name="imgUrl" id="imgUrl">
+                                        <input type="text" class="form-control m-2" value="${this.imgUrl}" name="imgUrl" id="imgUrl">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="number" min="1" class="form-control" value="${this.price}" name="price" id="price">
+                                        <input type="number" min="1" class="form-control m-2" value="${this.price}" name="price" id="price">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea name="description" class="form-control" id="" cols="30" rows="10">${this.description}</textarea>
+                                        <textarea name="description" class="form-control m-2" id="" cols="30" rows="10">${this.description}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

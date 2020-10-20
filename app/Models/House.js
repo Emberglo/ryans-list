@@ -19,7 +19,7 @@ export default class House {
             <p>${this.levels} Stories</p>
             <p>${this.description}</p>
             <p>${this.year}</p>
-            <button class="btn btn-danger btn-block" onclick="app.houseController.deleteHouse('${this._id}')">Delort</button>
+            <button class="btn btn-danger btn-block" onclick="app.houseController.deleteHouse('${this._id}')">Delete</button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editHouseModal-${this._id}">
             Edit
         </button>
@@ -46,22 +46,22 @@ export default class House {
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.bedrooms}" name="bedrooms" id="bedrooms">
+                                        <input type="text" class="form-control m-2" value="${this.bedrooms}" name="bedrooms" id="bedrooms">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.bathrooms}" name="bathrooms" id="bathrooms">
+                                        <input type="text" class="form-control m-2" value="${this.bathrooms}" name="bathrooms" id="bathrooms">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.imgUrl}" name="imgUrl" id="imgUrl">
+                                        <input type="text" class="form-control m-2" value="${this.imgUrl}" name="imgUrl" id="imgUrl">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.price}" name="price" id="price">
+                                        <input type="text" class="form-control m-2" value="${this.price}" name="price" id="price">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.levels}" name="levels" id="levels">
+                                        <input type="text" class="form-control m-2" value="${this.levels}" name="levels" id="levels">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" value="${this.year}" class="form-control" name="year"
+                                        <input type="text" value="${this.year}" class="form-control m-2" name="year"
                                             id="year">
                                     </div>
                                     <div class="col-sm-12">

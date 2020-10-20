@@ -15,7 +15,7 @@ export default class Car {
             <h5>$${this.rate}</h5>
             <p>${this.hours}</p>
             <p>${this.description}</p>
-            <button class="btn btn-danger btn-block" onclick="app.jobController.deleteJob('${this._id}')">Delort</button>
+            <button class="btn btn-danger btn-block" onclick="app.jobController.deleteJob('${this._id}')">Delete</button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editJobModal-${this._id}">
             Edit
         </button>
@@ -42,19 +42,19 @@ export default class Car {
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.jobTitle}" name="jobTitle" id="jobTitle">
+                                        <input type="text" class="form-control m-2" value="${this.jobTitle}" name="jobTitle" id="jobTitle">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.company}" name="company" id="company">
+                                        <input type="text" class="form-control m-2" value="${this.company}" name="company" id="company">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.rate}" name="rate" id="rate">
+                                        <input type="text" class="form-control m-2" value="${this.rate}" name="rate" id="rate">
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.hours}" name="hours" id="hours">
+                                        <input type="text" class="form-control m-2" value="${this.hours}" name="hours" id="hours">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea name="description" class="form-control" id="" cols="30" rows="10">${this.description}</textarea>
+                                        <textarea name="description" class="form-control m-2" id="" cols="30" rows="10">${this.description}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
