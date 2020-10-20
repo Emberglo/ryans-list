@@ -43,34 +43,24 @@ export default class Car {
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 <div class="form-group row">
-                                    <label for="make" class="col-sm-12 col-form-label">Make</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.make}" name="make" id="make"
-                                            placeholder="">
+                                        <input type="text" class="form-control" value="${this.make}" name="make" id="make">
                                     </div>
-                                    <label for="model" class="col-sm-12 col-form-label">Model</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.model}" name="model" id="model"
-                                            placeholder="">
+                                        <input type="text" class="form-control" value="${this.model}" name="model" id="model">
                                     </div>
-                                    <label for="year" class="col-sm-12 col-form-label">Year</label>
                                     <div class="col-sm-12">
                                         <input type="text" value="${this.year}" class="form-control" name="year"
-                                            id="year" placeholder="">
+                                            id="year">
                                     </div>
-                                    <label for="imgUrl" class="col-sm-12 col-form-label">Image Url</label>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control" value="${this.imgUrl}" name="imgUrl" id="imgUrl"
-                                            placeholder="">
+                                        <input type="text" class="form-control" value="${this.imgUrl}" name="imgUrl" id="imgUrl">
                                     </div>
-                                    <label for="price" class="col-sm-12 col-form-label">Price</label>
                                     <div class="col-sm-12">
-                                        <input type="number" min="1" class="form-control" value="${this.price}" name="price" id="price"
-                                            placeholder="">
+                                        <input type="number" min="1" class="form-control" value="${this.price}" name="price" id="price">
                                     </div>
-                                    <label for="description" class="col-sm-12 col-form-label">Description</label>
                                     <div class="col-sm-12">
-                                    <textarea name="description" class="form-control" id="" cols="30" rows="10">${this.description}</textarea>
+                                        <textarea name="description" class="form-control" id="" cols="30" rows="10">${this.description}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

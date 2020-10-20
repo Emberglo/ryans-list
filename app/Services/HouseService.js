@@ -1,30 +1,37 @@
 import { ProxyState } from "../AppState.js"
 import House from "../Models/House.js"
+import { api } from "../Services/AxiosService.js"
 
-class HousesService {
+class HouseService {
 
-    constructor() { }
-    
-    // buy(id) {
-    //     let temp = ProxyState.houses
-    //     // let house = temp.find(h => h.id == id)
-    //     document.getElementById("id").innerHTML = SoldTemplate
-    //     ProxyState.houses = temp
-    // }
-
-    removeHouse(id) {
-        let temp = ProxyState.houses
-        let houseIndex = temp.findIndex(h => h.id == id)
-        temp.splice(houseIndex, 1)
-        ProxyState.houses = temp
+    constructor() {
+        this.getHouses()
     }
 
-    createHouse(rawHouse) {
-        let newHouse = new House(rawHouse)  
-        let houses = [...ProxyState.houses, newHouse ]
-        ProxyState.houses = houses
+    getHouses() {
+        api.get("houses").then(res => {
+            ProxyState.houses = res.data.data.map(rawHouseData => new House(rawHouseData))
+        }).catch(err => console.error(err))
+    }
+    
+    deleteHouse(id) {
+        api.delete("houses/" + id).then(res => {
+            this.getHouses()
+        }).catch(err => console.error(err))
+    }
+
+    postHouse(newHouse) {
+        api.post("houses", newHouse).then(res => {
+            this.getHouses()
+        }).catch(err => console.error(err))
+    }
+
+    editHouse(editedHouse) {
+        api.put("houses/" + editedHouse._id, editedHouse).then(res => {
+            this.getHouses()
+        }).catch(err => console.error(err))
     }
 
 }
 
-export const housesService = new HousesService()
+export const houseService = new HouseService()

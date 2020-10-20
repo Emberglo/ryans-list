@@ -1,30 +1,38 @@
 import { ProxyState } from "../AppState.js"
 import Job from "../Models/Job.js"
+import { api } from "../Services/AxiosService.js"
 
-class JobsService {
+class JobService {
 
-    constructor() { }
-
-    // apply(id) {
-    //     let temp = ProxyState.jobs
-    //     // let house = temp.find(h => h.id == id)
-    //     document.getElementById("id").innerHTML = AppliedTemplate
-    //     ProxyState.jobs = temp
-    // }
-
-    removeJob(id) {
-        let temp = ProxyState.jobs
-        let jobIndex = temp.findIndex(j => j.id == id)
-        temp.splice(jobIndex, 1)
-        ProxyState.jobs = temp
+    constructor() {
+        this.getJobs()
     }
 
-    createJob(rawJob) {
-        let newJob = new Job(rawJob)
-        let jobs = [...ProxyState.jobs, newJob]
-        ProxyState.jobs = jobs
+    getJobs() {
+        api.get("jobs").then(res => {
+            ProxyState.jobs = res.data.data.map(rawJobData => new Job(rawJobData))
+        }).catch(err => console.error(err))
+    }
+
+    deleteJob(id) {
+        api.delete("jobs/" + id).then(res => {
+            this.getJobs()
+        }).catch(err => console.log(err))
+    }
+
+    postJob(newJob) {
+        api.post("jobs", newJob).then(res => {
+            this.getJobs()
+        }).catch(err => console.log(err))
+    }
+
+    editJob(editedJob) {
+        api.put("jobs/" + editedJob._id, editedJob).then(res => {
+            this.getJobs()
+        }).catch(err => console.log(err))
+
     }
 
 }
 
-export const jobsService = new JobsService()
+export const jobService = new JobService()

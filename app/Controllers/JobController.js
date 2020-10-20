@@ -1,45 +1,54 @@
 import { ProxyState } from "../AppState.js"
-import { jobsService } from "../Services/JobService.js"
+import { jobService } from "../Services/JobService.js"
 
 function _draw() {
     let jobs = ProxyState.jobs
     let template = ""
-    jobs.forEach(j => template += j.JobTemplate)
+    jobs.forEach(j => template += j.jobTemplate)
     document.getElementById("jobs").innerHTML = template
 }
 
 export default class JobsController {
     constructor() {
-        // console.log("cars controller")
-        // console.log(ProxyState.cars)
-        _draw()
         ProxyState.on("jobs", _draw)
+        _draw()
     }
 
-    createJob() {
+    postJob(event) {
         event.preventDefault();
         // console.log("car creating")
         let form = event.target
         // console.log(form)
-        let rawJob = {
-            // @ts-ignore
-            name: form.name.value,
-            // @ts-ignore
-            title: form.title.value,
-            // @ts-ignore
-            salary: form.salary.value,
-            // @ts-ignore
-            jobDescription: form.jobDescription.value,
+        let newJob = {
+        // @ts-ignore
+            jobTitle : form.jobTitle.value,
+            company : form.company.value,
+            rate : form.rate.value,
+            hours : form.hours.value,
+            description : form.description.value || "Unknown",
         }
         // console.log(rawCar)
-        jobsService.createJob(rawJob)
+        jobService.postJob(newJob)
     }
 
-    delete(id) {
-        jobsService.removeJob(id)
+    editJob(event, id) {
+        event.preventDefault();
+        let form = event.target
+        let editedJob = {
+            jobTitle: form.jobTitle.value,
+            company: form.company.value,
+            rate: form.rate.value,
+            hours: form.hours.value,
+            description: form.description.value || "Unknown",
+            _id: id
+        }
+        // @ts-ignore
+        $('#editJobModal-' + id).modal('toggle')
+        jobService.editJob(editedJob)
     }
 
-    // apply(id) {
-    //     jobsService.apply(id)
-    // }
+    deleteJob(id) {
+        jobService.deleteJob(id)
+    }
+
 } 
