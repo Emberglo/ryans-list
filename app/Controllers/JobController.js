@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js"
-import { jobsService } from "../Services/JobsService.js"
+import { jobsService } from "../Services/JobService.js"
 
 function _draw() {
     let jobs = ProxyState.jobs
