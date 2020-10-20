@@ -19,10 +19,10 @@ export default class House {
             <p>${this.levels} Stories</p>
             <p>${this.description}</p>
             <p>${this.year}</p>
-            <button class="btn btn-danger btn-block" onclick="app.houseController.deleteHouse('${this._id}')">Delete</button>
+            <button class="btn btn-danger btn-block" onclick="app.houseController.deleteHouse('${this._id}')"><i class="fas fa-times"></i></button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editHouseModal-${this._id}">
-            Edit
-        </button>
+                <i class="far fa-edit"></i>
+            </button>
         ${this.houseModal}
         </div>
         `

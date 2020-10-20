@@ -17,10 +17,10 @@ export default class Car {
             <h5>$${this.price}</h5>
             <p>${this.year}</p>
             <p>${this.description}</p>
-            <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')">Delete</button>
+            <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')"><i class="fas fa-times"></i></button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editCarModal-${this._id}">
-            Edit
-        </button>
+                <i class="far fa-edit"></i>
+            </button>
         ${this.Modal}
         </div>
         `

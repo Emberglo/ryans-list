@@ -15,10 +15,10 @@ export default class Car {
             <h5>$${this.rate}</h5>
             <p>${this.hours}</p>
             <p>${this.description}</p>
-            <button class="btn btn-danger btn-block" onclick="app.jobController.deleteJob('${this._id}')">Delete</button>
+            <button class="btn btn-danger btn-block" onclick="app.jobController.deleteJob('${this._id}')"><i class="fas fa-times"></i></button>
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editJobModal-${this._id}">
-            Edit
-        </button>
+                <i class="far fa-edit"></i>
+            </button>
         ${this.jobModal}
         </div>
         `
