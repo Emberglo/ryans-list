@@ -2,7 +2,7 @@
 import CarController from "./Controllers/CarController.js";
 
 class App {
-  carsController = new CarController()
+  carController = new CarController()
 
 }
 

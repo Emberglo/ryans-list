@@ -10,7 +10,7 @@ export default class Car {
     }
 
     get Template() {
-        return /*html*/`<div class="col-12 col-md-2 border border-gray shadow-lg rounded p-3 m-3">
+        return /*html*/`<div class="col-12 col-md-4 col-lg-2 border border-gray shadow-lg rounded p-3 m-3">
             <img class="img-fluid" src="${this.imgUrl}" alt=""/>
             <h3>${this.make}</h3>
             <h3>${this.model}</h3>
@@ -41,7 +41,7 @@ export default class Car {
                 <div class="modal-body">
                     <form class="container-fluid" onsubmit="app.carController.editCar(event, '${this._id}')">
                         <div class="row justify-content-center">
-                            <div class="col-4">
+                            <div class="col-12">
                                 <div class="form-group row">
                                     <label for="make" class="col-sm-12 col-form-label">Make</label>
                                     <div class="col-sm-12">
@@ -55,7 +55,7 @@ export default class Car {
                                     </div>
                                     <label for="year" class="col-sm-12 col-form-label">Year</label>
                                     <div class="col-sm-12">
-                                        <input type="range" value="${this.year}" min="1900" max="2020" class="form-control" name="year"
+                                        <input type="text" value="${this.year}" class="form-control" name="year"
                                             id="year" placeholder="">
                                     </div>
                                     <label for="imgUrl" class="col-sm-12 col-form-label">Image Url</label>
@@ -74,17 +74,11 @@ export default class Car {
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary ml-3">Submit</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
