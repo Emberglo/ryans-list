@@ -73,6 +73,7 @@ body {
 	color: #212529;
 	text-align: left;
 	background-color: #f2f2f2;
+	cursor: default;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -243,6 +244,10 @@ button {
 button:focus {
 	outline: 1px dotted;
 	outline: 5px auto -webkit-focus-ring-color;
+}
+
+.btn:hover {
+	cursor: pointer;
 }
 
 input,
